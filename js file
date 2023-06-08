@@ -1,0 +1,41 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Drag and drop functionality
+    const draggableElements = document.querySelectorAll('.draggable');
+    const preview = document.getElementById('preview');
+
+    draggableElements.forEach(element => {
+        element.addEventListener('dragstart', dragStart);
+    });
+
+    preview.addEventListener('dragover', dragOver);
+    preview.addEventListener('drop', drop);
+
+    function dragStart(event) {
+        event.dataTransfer.setData('text', event.target.id);
+    }
+
+    function dragOver(event) {
+        event.preventDefault();
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        const elementId = event.dataTransfer.getData('text');
+        const element = document.getElementById(elementId);
+        const clonedElement = element.cloneNode(true);
+        preview.appendChild(clonedElement);
+    }
+});
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.static('public'));
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+
+
