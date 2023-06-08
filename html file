@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Management Tool</title>
+    <!-- Include CSS and JavaScript files -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Content management interface -->
+    <div id="content-editor">
+        <!-- Drag and drop elements -->
+        <div id="text-element" class="draggable">Text</div>
+        <div id="image-element" class="draggable">Image</div>
+        <div id="video-element" class="draggable">Video</div>
+        
+        <!-- Preview area -->
+        <div id="preview"></div>
+    </div>
+</body>
+</html>
+
